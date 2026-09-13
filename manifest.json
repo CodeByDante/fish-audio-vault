@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Fish Audio Voice Vault",
+  "version": "1.1.0",
+  "description": "Almacena, organiza y reproduce muestras de voz de Fish Audio con memoria en sincronía continua y ventana independiente.",
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Fish Audio Voice Vault",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "src/js/background.js"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://api.fish.audio/*",
+    "https://*.r2.cloudflarestorage.com/*"
+  ]
+}
