@@ -42,7 +42,7 @@ class App {
     this.cancelModalBtn = document.getElementById('cancelModalBtn');
     this.modalAddForm = document.getElementById('modalAddForm');
     this.modalTitle = document.getElementById('modalTitle');
-    
+
     this.modalTitleInput = document.getElementById('modalTitleInput');
     this.modalUrlInput = document.getElementById('modalUrlInput');
     this.modalFolderSelect = document.getElementById('modalFolderSelect');
@@ -144,9 +144,9 @@ class App {
   }
 
   checkViewMode() {
-    const isExtensionPopup = window.chrome && chrome.extension && chrome.extension.getViews && 
-                             chrome.extension.getViews({ type: 'popup' }).includes(window);
-    
+    const isExtensionPopup = window.chrome && chrome.extension && chrome.extension.getViews &&
+      chrome.extension.getViews({ type: 'popup' }).includes(window);
+
     if (!isExtensionPopup && window.innerWidth >= 600) {
       if (this.openTabBtn) this.openTabBtn.style.display = 'none';
     }
@@ -170,12 +170,12 @@ class App {
           localFolders = json.folders || null;
         }
       }
-    } catch (e) {}
+    } catch (e) { }
 
     if (!localVoices) {
       try {
-        const jsonPath = (window.chrome && chrome.runtime && chrome.runtime.getURL) 
-          ? chrome.runtime.getURL('voices.json') 
+        const jsonPath = (window.chrome && chrome.runtime && chrome.runtime.getURL)
+          ? chrome.runtime.getURL('voices.json')
           : 'voices.json';
         const res = await fetch(`${jsonPath}?t=${Date.now()}`);
         if (res.ok) {
@@ -312,7 +312,7 @@ class App {
         setOnline();
         return;
       }
-    } catch (e) {}
+    } catch (e) { }
 
     setOffline();
   }
@@ -331,7 +331,7 @@ class App {
     if (this.cancelModalBtn) {
       this.cancelModalBtn.addEventListener('click', () => this.hideModal());
     }
-    
+
     if (this.addModal) {
       this.addModal.addEventListener('click', (e) => {
         if (e.target === this.addModal) this.hideModal();
@@ -392,7 +392,7 @@ class App {
     if (this.cancelFolderModalBtn) {
       this.cancelFolderModalBtn.addEventListener('click', () => this.hideFolderModal());
     }
-    
+
     if (this.createFolderModal) {
       this.createFolderModal.addEventListener('click', (e) => {
         if (e.target === this.createFolderModal) this.hideFolderModal();
@@ -619,8 +619,8 @@ class App {
           this.sortIconAsc.style.display = this.sortOrder === 'asc' ? 'block' : 'none';
         }
         if (this.sortOrderBtn) {
-          this.sortOrderBtn.title = this.sortOrder === 'desc' 
-            ? 'Orden: Más reciente a más antiguo' 
+          this.sortOrderBtn.title = this.sortOrder === 'desc'
+            ? 'Orden: Más reciente a más antiguo'
             : 'Orden: Más antiguo a más reciente';
         }
         this.render();
@@ -716,7 +716,7 @@ class App {
       if (this.sidebarFolderList) {
         const item = document.createElement('button');
         item.className = `sidebar-folder-item ${this.activeFolderId === folder.id ? 'active' : ''}`;
-        
+
         item.innerHTML = `
           <div class="sidebar-folder-left">
             <span class="sidebar-folder-name">${this.escape(folder.name)}</span>
@@ -869,7 +869,7 @@ class App {
         StorageManager.saveFolders(this.folders);
         StorageManager.saveVoices(this.voices);
         this.autoSyncDiskFile();
-        
+
         this.activeFolderId = 'all';
         this.renderFolders();
         this.render();
@@ -945,8 +945,8 @@ class App {
 
           const hasValidThumb = voice.coverImage && voice.coverImage.trim() !== '' && !voice.coverImage.startsWith('images/v_') && !voice.coverImage.includes('icon128.png');
           const thumbPlaceholder = `<div class="tree-voice-thumb-placeholder"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path></svg></div>`;
-          const thumbHtml = hasValidThumb 
-            ? `<img src="${this.escape(voice.coverImage)}" class="tree-voice-thumb" alt="Portada" onerror="this.outerHTML='<div class=\\'tree-voice-thumb-placeholder\\'><svg width=\\'15\\' height=\\'15\\' viewBox=\\'0 0 24 24\\' fill=\\'none\\' stroke=\\'currentColor\\' stroke-width=\\'2\\' stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\'><path d=\\'M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z\\'></path><path d=\\'M19 10v2a7 7 0 0 1-14 0v-2\\'></path></svg></div>';">` 
+          const thumbHtml = hasValidThumb
+            ? `<img src="${this.escape(voice.coverImage)}" class="tree-voice-thumb" alt="Portada" onerror="this.outerHTML='<div class=\\'tree-voice-thumb-placeholder\\'><svg width=\\'15\\' height=\\'15\\' viewBox=\\'0 0 24 24\\' fill=\\'none\\' stroke=\\'currentColor\\' stroke-width=\\'2\\' stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\'><path d=\\'M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z\\'></path><path d=\\'M19 10v2a7 7 0 0 1-14 0v-2\\'></path></svg></div>';">`
             : thumbPlaceholder;
 
           itemEl.innerHTML = `
@@ -1047,8 +1047,8 @@ class App {
     // 1. Enviar mensaje al background service worker de la extensión para guardado en disco
     if (window.chrome && chrome.runtime && chrome.runtime.sendMessage) {
       try {
-        chrome.runtime.sendMessage({ action: 'save_to_disk', data }, (res) => {});
-      } catch (e) {}
+        chrome.runtime.sendMessage({ action: 'save_to_disk', data }, (res) => { });
+      } catch (e) { }
     }
 
     // 2. Enviar petición POST directa al servidor local Node.js (sync_server.js)
@@ -1057,8 +1057,8 @@ class App {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
-      }).catch(() => {});
-    } catch (e) {}
+      }).catch(() => { });
+    } catch (e) { }
 
     // 3. Escritura directa File System Access API si está vinculado
     if (this.fileHandle) {
@@ -1175,7 +1175,7 @@ class App {
     if (this.modalTitleInput) this.modalTitleInput.value = '';
     if (this.modalUrlInput) this.modalUrlInput.value = '';
     if (this.modalNotesInput) this.modalNotesInput.value = '';
-    
+
     if (this.modalFolderSelect && this.activeFolderId !== 'all') {
       this.modalFolderSelect.value = this.activeFolderId;
     }
@@ -1194,7 +1194,7 @@ class App {
     if (this.modalFolderSelect && voice.folderId) {
       this.modalFolderSelect.value = voice.folderId;
     }
-    
+
     if (voice.coverImage) {
       this.loadAndCropSquare(voice.coverImage);
     } else {
@@ -1295,7 +1295,7 @@ class App {
             }
           }
         });
-        
+
         if (this.currentPlayingId === this.editingVoiceId) {
           this.pauseAudio(this.editingVoiceId);
         }
@@ -1692,7 +1692,7 @@ class App {
   createCardElement(voice, options = {}) {
     const isSelected = this.selectedVoiceIds.has(voice.id);
     const item = document.createElement('div');
-    item.className = options.isSubVersion 
+    item.className = options.isSubVersion
       ? `voice-item sub-version-item ${isSelected ? 'selected' : ''}`
       : `voice-item ${isSelected ? 'selected' : ''}`;
     item.dataset.id = voice.id;
@@ -1710,7 +1710,7 @@ class App {
 
     const hasValidCover = voice.coverImage && voice.coverImage.trim() !== '' && !voice.coverImage.startsWith('images/v_') && !voice.coverImage.includes('icon128.png');
     const svgPlaceholder = `<div class="voice-cover-large-placeholder"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line><line x1="8" y1="22" x2="16" y2="22"></line></svg></div>`;
-    const coverHtml = hasValidCover 
+    const coverHtml = hasValidCover
       ? `<img src="${this.escape(voice.coverImage)}" class="voice-cover-large" alt="Portada" onerror="this.parentElement.innerHTML='<div class=\\'voice-cover-large-placeholder\\'><svg width=\\'44\\' height=\\'44\\' viewBox=\\'0 0 24 24\\' fill=\\'none\\' stroke=\\'currentColor\\' stroke-width=\\'1.6\\' stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\'><path d=\\'M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z\\'></path><path d=\\'M19 10v2a7 7 0 0 1-14 0v-2\\'></path><line x1=\\'12\\' y1=\\'19\\' x2=\\'12\\' y2=\\'22\\'></line><line x1=\\'8\\' y1=\\'22\\' x2=\\'16\\' y2=\\'22\\'></line></svg></div>';">`
       : svgPlaceholder;
 
@@ -2062,7 +2062,7 @@ class App {
     if (audio) audio.pause();
     this.stopSmoothProgressLoop();
     if (this.currentPlayingId === id) this.currentPlayingId = null;
-    
+
     const card = document.querySelector(`.voice-item[data-id="${id}"]`);
     if (card) {
       const btn = card.querySelector('.play-toggle-btn');
@@ -2096,11 +2096,11 @@ class App {
       if (this.currentPlayingId === id) {
         const audio = this.audioPlayers.get(id);
         const card = document.querySelector(`.voice-item[data-id="${id}"]`);
-        
+
         if (audio && card && audio.duration && !audio.paused) {
           const seekBar = card.querySelector('.seek-bar');
           const curTimeEl = card.querySelector('.cur-time');
-          
+
           const percent = (audio.currentTime / audio.duration) * 100;
           if (seekBar) {
             seekBar.value = percent;

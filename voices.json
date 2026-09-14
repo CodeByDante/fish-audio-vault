@@ -55,40 +55,10 @@
   ],
   "voices": [
     {
-      "id": "v_17893543260581",
-      "title": "erik cartman v1",
-      "url": "https://fish.audio/m/1f08862a978a43efa034818ceb93b30e",
-      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-09-14/bbd919b8eb1f4a0095660203f5e85efa.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260914%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260914T025119Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0a0cd2553709f3f7ccdebad9ef1999f1913f99c7c24e1f6312769a645ae9841d",
-      "coverImage": "",
-      "folderId": "f_sueltas",
-      "notes": "",
-      "folderName": "Voces Sueltas"
-    },
-    {
-      "id": "v_17893543260582",
-      "title": "erik cartman v2",
-      "url": "https://fish.audio/m/948872a99bd245c4ae9c08e218c3fe85",
-      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-09-14/b80674df1c174a39b85d74c94180bd95.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260914%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260914T025114Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3392ce0212fa827cc1343fde633766a37a5fc1c52f2f79bd81c928945352897e",
-      "coverImage": "",
-      "folderId": "f_sueltas",
-      "notes": "",
-      "folderName": "Voces Sueltas"
-    },
-    {
-      "id": "v_17893543260583",
-      "title": "erik cartman v3",
-      "url": "https://fish.audio/m/9fec948b79024c42a6c218c95564ce87",
-      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-09-14/9b48d5a1d3f54d169804c03b414574ac.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260914%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260914T025156Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7f7fb54321f3e574aada771f99a9dbde19919f6bb5fe8160571775c8e4ddb76a",
-      "coverImage": "",
-      "folderId": "f_sueltas",
-      "notes": "",
-      "folderName": "Voces Sueltas"
-    },
-    {
       "id": "v_1789076335393",
       "title": "gesse",
       "url": "https://fish.audio/m/7fcc17f4ec8c4deca625aa6fbf2559e0",
-      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-09-10/465c518dcf5a422ea6030fe5feb4d366.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260914%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260914T024350Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=af329766292120cf5027f0c11fc7939181cbfcd8467d5cbdbe09beea01d5e497",
+      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-09-10/465c518dcf5a422ea6030fe5feb4d366.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260914%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260914T025651Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5f2a9ca3000ade50de1569365e6721bc89552882593a52156b3f7c18d8a7605a",
       "coverImage": "",
       "folderId": "f_1787441902065",
       "notes": "",
@@ -99,7 +69,7 @@
       "id": "v_1788728771502",
       "title": "Voz Alegre Joven",
       "url": "https://fish.audio/m/5b5ed10a426f4634a761e1a2674682bf",
-      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-09-06/aa92e8478f3e414494291ff9173626ce.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260914%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260914T024355Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9cac9602b66669f62a6033ad3d9109a5d42a16cd9c3d401bb5d31b9a71323d36",
+      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-09-06/aa92e8478f3e414494291ff9173626ce.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260913%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260913T005654Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e677ecaaf4415e5e2cbbfff2a406362602a2eb92d66587183724817f600e2b97",
       "coverImage": "",
       "folderId": "f_sueltas",
       "notes": "",
@@ -109,7 +79,7 @@
       "id": "v_1788569346737",
       "title": "Voz Firme Veterana",
       "url": "https://fish.audio/m/fc1c6a382b0c45aabfef8ea33c6869ef",
-      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-09-05/518f2b101ed14839b284769940d2e5d1.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260914%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260914T025105Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6b0b248773089b724d7b974dd374cac379f89fef471cde754a1010f9b93e9705",
+      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-09-05/518f2b101ed14839b284769940d2e5d1.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260913%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260913T005656Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=24b51620fee6c892365d3ae25690bf5b2347b163709b34e9095238c13a908a99",
       "coverImage": "",
       "folderId": "f_sueltas",
       "folderName": "Voces Sueltas"
@@ -172,7 +142,7 @@
       "id": "v_1788378041262",
       "title": "oldeus prime",
       "url": "https://fish.audio/m/00cb23b887074c829513d44b6464c026",
-      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-09-02/8a8a4b6fe4764938adbb91028ae91545.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260914%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260914T025101Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=87df060de2bc037bcbd633e3f6cbf9e1fc43ed474e1c12fa5bae81bb4c87c082",
+      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-09-02/8a8a4b6fe4764938adbb91028ae91545.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260905%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260905T203747Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=08440775d10b5c91240ab36290d89e759d12d54ff5892f1f58dabbcb70cace14",
       "coverImage": "",
       "folderId": "f_1787441902065",
       "folderName": "mushoku tensei reincarnation"
@@ -302,7 +272,7 @@
     },
     {
       "id": "v_79350ab8f0fb",
-      "title": "Guerrero Dramtico",
+      "title": "Guerrero Dramático",
       "name": "Guerrero Dramático",
       "url": "https://fish.audio/m/79350ab8f0fb44069848bd35b71cee59",
       "sampleAudio": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/task/63c06337d538424f8045cf143fac9b6a.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260823%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260823T011625Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7dc5848da6a42f3f1d7c135524131a76f4c95f9475ef8b8098f4c89c023ce917",
@@ -385,7 +355,7 @@
     },
     {
       "id": "v_a7caf4b47a24",
-      "title": "Kinger (Espaol Latino)",
+      "title": "Kinger (Español Latino)",
       "name": "Kinger (Español Latino)",
       "url": "https://fish.audio/m/a7caf4b47a24432e946f28e24eba6ea9",
       "sampleAudio": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/task/f88c8cc202e24e9bb7b02fd9a489f72a.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260823%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260823T011629Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8df3f16ed729800a288028044a14d67df17ac56e09990bcb619bde3b8d38e68e",
@@ -426,7 +396,7 @@
       "sampleAudio": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-08-21/61517dbc75314008922ca9daefb2104a.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260823%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260823T011631Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b9a0f706ca2d8637283819640e39f6d7fe22347f4bfa3fa6f42e2533a500423e",
       "coverImage": "",
       "createdAt": 1787446161615,
-      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-08-21/61517dbc75314008922ca9daefb2104a.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260914%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260914T024649Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0499e7b71a10ba4d1e8b7855b3cd29f3751d6cde81e991323531a60f1c3558dc",
+      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-08-21/61517dbc75314008922ca9daefb2104a.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260905%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260905T141146Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=aec7305b1d50b8c8b4be224ffed811933fd77b78702924b2f8973aa0e841a7c3",
       "folderId": "f_1787444418089",
       "folderName": "Modelos Clonicos"
     },
@@ -480,7 +450,7 @@
     },
     {
       "id": "v_f1d222000a5c",
-      "title": "Narrador Animado y Dinmico",
+      "title": "Narrador Animado y Dinámico",
       "name": "Narrador Animado y Dinámico",
       "url": "https://fish.audio/m/f1d222000a5c4cd2ba2d3a5ff6efb39f",
       "sampleAudio": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-08-07/34a5090abac74d8e9926163f0af4b8c0.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260823%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260823T011634Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3fb340fa62c7a37fde8aca76bd00773b5998f3ff8f58a63a08c213550c700bb0",
@@ -492,7 +462,7 @@
     },
     {
       "id": "v_6fd222abb2ae",
-      "title": "Narrador Bblico",
+      "title": "Narrador Bíblico",
       "name": "Narrador Bíblico",
       "url": "https://fish.audio/m/6fd222abb2ae49049c3d58443ad55408",
       "sampleAudio": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/task/34393f23038941afa6c2114a24000ce6.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260823%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260823T011635Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e35cf1a0b9817bad2dd67913a0b11f75753b7d645fdd7fa72b60dcc58f6369c1",
@@ -504,7 +474,7 @@
     },
     {
       "id": "v_3db0dabef1e2",
-      "title": "Narrador Dramtico Espaol",
+      "title": "Narrador Dramático Español",
       "name": "Narrador Dramático Español",
       "url": "https://fish.audio/m/3db0dabef1e2403096674c70ecbeac4c",
       "sampleAudio": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/task/ee4f4a0208ff4e25ba370725be4d67bc.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260823%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260823T011635Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=eb314145d08f5ad332e1d0f15b2a6e4cc38a38e78849253b4c88fad803f37fc7",
@@ -516,7 +486,7 @@
     },
     {
       "id": "v_a493817d1dd9",
-      "title": "Narrador Masculino Clido",
+      "title": "Narrador Masculino Cálido",
       "name": "Narrador Masculino Cálido",
       "url": "https://fish.audio/m/a493817d1dd94516847e079220e65169",
       "sampleAudio": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-08-19/cd8acfe2da5b49498e6d4a4ce3bcb577.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260823%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260823T011636Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8e70614bb9878f2bbdb5af68d27fa09a658098c07c2ed364b10673ef8b3b29a5",
@@ -528,15 +498,16 @@
     },
     {
       "id": "v_40170a98f053",
-      "title": "Narrador Masculino Verstil",
+      "title": "cliff",
       "name": "Narrador Masculino Versátil",
       "url": "https://fish.audio/m/40170a98f0534a388009c418a8a599ff",
       "sampleAudio": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-08-10/40452f487a2b411491e2be06843fe6eb.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260823%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260823T011636Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e4ce5d5a55976ae8df3bce4ca5789774080a1506f34e185d7057a12d144e14e2",
       "coverImage": "",
       "createdAt": 1787446161615,
-      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-08-10/40452f487a2b411491e2be06843fe6eb.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260905%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260905T203349Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b764b0517b2d5e055c100296788dc529a0a5d6f2a1d4a97f8f4b1d0bf233acbf",
+      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-08-10/40452f487a2b411491e2be06843fe6eb.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260914%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260914T030658Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d2f085ebbdce6f82dd1968dda3d9b5edf3badd58aaf0780b03bc50f18c1e395b",
       "folderId": "f_1787441902065",
-      "folderName": "mushoku tensei reincarnation"
+      "folderName": "mushoku tensei reincarnation",
+      "notes": ""
     },
     {
       "id": "v_6caa57ae61fc",
@@ -552,7 +523,7 @@
     },
     {
       "id": "v_d822a12e4d03",
-      "title": "Narrador Sabio Espaol",
+      "title": "Narrador Sabio Español",
       "name": "Narrador Sabio Español",
       "url": "https://fish.audio/m/d822a12e4d034f0bacce2a2519ebfcd7",
       "sampleAudio": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/task/0e1c78e98581420fb0597b5f862231bb.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260823%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260823T011637Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=90ba0028a49ee5dd6715d3f269dbf320f3559cec8e57ac2fab2de74188e22047",
@@ -576,7 +547,7 @@
     },
     {
       "id": "v_19e3b75cc907",
-      "title": "Narrador Sereno Espaol",
+      "title": "Narrador Sereno Español",
       "name": "Narrador Sereno Español",
       "url": "https://fish.audio/m/19e3b75cc9074341bde4d4910c91eb7c",
       "sampleAudio": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/task/398414b449f24873a34cdce8238a242c.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260823%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260823T011638Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=36b57ccda04a09c8b87ef29685c2ed3671f1235291f7310febf344554cbc97fe",
@@ -588,7 +559,7 @@
     },
     {
       "id": "v_9ea5a122e3d9",
-      "title": "Narrador Serio Espaol",
+      "title": "Narrador Serio Español",
       "name": "Narrador Serio Español",
       "url": "https://fish.audio/m/9ea5a122e3d94297b052d87a92c0a824",
       "sampleAudio": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/task/50a117921f3847b2a2e2f66f4c90db41.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260823%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260823T011639Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2204165147b10b648f3047e52ad1abb565cdde11f4bf4d135cd7f8cb2deff13f",
@@ -1057,7 +1028,7 @@
     },
     {
       "id": "v_269da5905d53",
-      "title": "Zero [ Cortar por la lnea de puntos. Calacare ]",
+      "title": "Zero [ Cortar por la línea de puntos. Calacare ]",
       "name": "Zero [ Cortar por la línea de puntos. Calacare ]",
       "url": "https://fish.audio/m/269da5905d534aee9c48ea2f86ab3f90",
       "sampleAudio": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/task/48ddd3068fd44d9c98e57d0ba07bccae.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260823%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260823T011659Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=1e12409b851bfa9e4a4e213aa791b5ba96d24d7b452c7fc42cf6c0d366296609",
