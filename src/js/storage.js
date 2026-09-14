@@ -1,40 +1,33 @@
-const VOICES_KEY = 'fish_audio_voices';
-const FOLDERS_KEY = 'fish_audio_folders';
 const SETTINGS_KEY = 'fish_audio_settings';
 
 export class StorageManager {
-  static getVoices() {
+  static clearLegacyStorage() {
     try {
-      const data = localStorage.getItem(VOICES_KEY);
-      return data ? JSON.parse(data) : null;
-    } catch (e) {
-      return null;
-    }
+      localStorage.removeItem('fish_audio_voices');
+      localStorage.removeItem('fish_audio_folders');
+    } catch (e) {}
+  }
+
+  static getVoices() {
+    // NUNCA usar localStorage para voces: Fuerza la lectura desde voices.json
+    this.clearLegacyStorage();
+    return null;
   }
 
   static saveVoices(voices) {
-    try {
-      localStorage.setItem(VOICES_KEY, JSON.stringify(voices));
-    } catch (e) {
-      console.error('Error saving voices to localStorage:', e);
-    }
+    // NUNCA guardar voces en localStorage
+    this.clearLegacyStorage();
   }
 
   static getFolders() {
-    try {
-      const data = localStorage.getItem(FOLDERS_KEY);
-      return data ? JSON.parse(data) : null;
-    } catch (e) {
-      return null;
-    }
+    // NUNCA usar localStorage para carpetas: Fuerza la lectura desde voices.json
+    this.clearLegacyStorage();
+    return null;
   }
 
   static saveFolders(folders) {
-    try {
-      localStorage.setItem(FOLDERS_KEY, JSON.stringify(folders));
-    } catch (e) {
-      console.error('Error saving folders to localStorage:', e);
-    }
+    // NUNCA guardar carpetas en localStorage
+    this.clearLegacyStorage();
   }
 
   static getSettings() {
@@ -50,7 +43,7 @@ export class StorageManager {
     try {
       localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
     } catch (e) {
-      console.error('Error saving settings to localStorage:', e);
+      console.error('Error al guardar configuración:', e);
     }
   }
 }

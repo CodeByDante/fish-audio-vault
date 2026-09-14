@@ -25,6 +25,7 @@
   ],
   "host_permissions": [
     "https://api.fish.audio/*",
-    "https://*.r2.cloudflarestorage.com/*"
+    "https://*.r2.cloudflarestorage.com/*",
+    "http://localhost:8080/*"
   ]
 }

@@ -153,27 +153,40 @@ class App {
   }
 
   async loadData() {
-    let localFolders = StorageManager.getFolders();
-    let localVoices = StorageManager.getVoices();
+    StorageManager.clearLegacyStorage();
 
-    const hasAudioUrls = localVoices && localVoices.some(v => v.audioUrl && v.audioUrl.length > 10);
-    if (!localVoices || localVoices.length < 70 || !hasAudioUrls) {
+    let localFolders = null;
+    let localVoices = null;
+
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 1500);
+      const serverRes = await fetch(`http://localhost:8080/voices.json?t=${Date.now()}`, { signal: controller.signal });
+      clearTimeout(timeoutId);
+      if (serverRes.ok) {
+        const json = await serverRes.json();
+        if (json.voices && Array.isArray(json.voices)) {
+          localVoices = json.voices;
+          localFolders = json.folders || null;
+        }
+      }
+    } catch (e) {}
+
+    if (!localVoices) {
       try {
         const jsonPath = (window.chrome && chrome.runtime && chrome.runtime.getURL) 
           ? chrome.runtime.getURL('voices.json') 
           : 'voices.json';
-        const res = await fetch(jsonPath);
+        const res = await fetch(`${jsonPath}?t=${Date.now()}`);
         if (res.ok) {
           const json = await res.json();
-          if (json.voices && Array.isArray(json.voices) && json.voices.length > 0) {
+          if (json.voices && Array.isArray(json.voices)) {
             localVoices = json.voices;
-            if (json.folders && Array.isArray(json.folders)) {
-              localFolders = json.folders;
-            }
+            localFolders = json.folders || null;
           }
         }
       } catch (e) {
-        console.warn('Carga de fallback local voices.json completada:', e);
+        console.warn('Carga de voices.json:', e);
       }
     }
 
@@ -188,9 +201,6 @@ class App {
 
     this.folders = this.ensureFixedFoldersOrder(savedFolders);
     this.voices = savedVoices;
-
-    StorageManager.saveFolders(this.folders);
-    StorageManager.saveVoices(this.voices);
   }
 
   ensureFixedFoldersOrder(folders) {
