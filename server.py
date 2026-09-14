@@ -16,7 +16,23 @@ class SyncHandler(http.server.SimpleHTTPRequestHandler):
         self.send_header('Access-Control-Allow-Origin', '*')
         self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
         self.send_header('Access-Control-Allow-Headers', 'Content-Type')
+        self.send_header('Cache-Control', 'no-cache, no-store, must-revalidate')
+        self.send_header('Pragma', 'no-cache')
+        self.send_header('Expires', '0')
         super().end_headers()
+
+
+    def do_GET(self):
+        if self.path.startswith('/ping'):
+            try:
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json')
+                self.end_headers()
+                self.wfile.write(json.dumps({"status": "ok"}).encode('utf-8'))
+            except Exception:
+                pass
+            return
+        super().do_GET()
 
     def do_OPTIONS(self):
         try:
@@ -66,9 +82,12 @@ class SyncHandler(http.server.SimpleHTTPRequestHandler):
         # Evitar imprimir rastros feos por cierres abruptos de conexión del navegador
         pass
 
+class ThreadedHTTPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
+    daemon_threads = True
+    allow_reuse_address = True
+
 if __name__ == '__main__':
-    socketserver.TCPServer.allow_reuse_address = True
-    with socketserver.TCPServer(("", PORT), SyncHandler) as httpd:
+    with ThreadedHTTPServer(("", PORT), SyncHandler) as httpd:
         print("===================================================")
         print(f"  Servidor Web con Sincronizacion activa (http://localhost:{PORT})")
         print("===================================================")
@@ -76,3 +95,4 @@ if __name__ == '__main__':
             httpd.serve_forever()
         except KeyboardInterrupt:
             print("\nServidor detenido.")
+

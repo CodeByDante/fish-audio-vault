@@ -1,0 +1,191 @@
+===============================================================================
+                       GUÍA TÉCNICA DEL PROYECTO
+                     FISH AUDIO - VOICE VAULT v1.1.0
+===============================================================================
+
+[INFORMACIÓN GENERAL]
+- Nombre del Proyecto: Fish Audio Voice Vault
+- Versión: 1.1.0
+- Tipo de Aplicación: Extensión de Chrome (Manifest V3) / Web App Local con servidor Python de sincronización.
+- Propósito: Almacenar, organizar, categorizar, filtrar, recortar portadas y reproducir muestras de voz extraídas o vinculadas de Fish Audio (https://fish.audio). Permite guardar datos directamente en el disco duro local mediante un servidor Python ligero.
+
+===============================================================================
+[ESTRUCTURA DE ARCHIVOS Y CARPETAS]
+===============================================================================
+
+fish-audio-vault-main/
+├── manifest.json            <- Configuración de la Extensión de Chrome (Manifest V3)
+├── index.html               <- Interfaz principal de la aplicación (HTML5)
+├── server.py                <- Servidor HTTP en Python (localhost:8080) para guardado local en disco
+├── voices.json              <- Base de datos principal en formato JSON (voces y carpetas)
+├── Iniciar_SegundoPlano.vbs <- Script VBScript para iniciar server.py silenciosamente en segundo plano
+├── Activar_AutoInicio.bat   <- Script Batch que configura auto-inicio y crea acceso directo en el Escritorio
+├── setup_startup.vbs        <- Script VBScript que crea los accesos directos en Inicio de Windows y el Escritorio
+
+├── GUIA_PROYECTO.txt        <- Este archivo de referencia técnica del proyecto
+│
+├── src/
+│   ├── js/
+│   │   ├── app.js          <- Lógica principal de la aplicación (SPA modular ES6, ~2100+ líneas)
+│   │   ├── background.js   <- Service Worker V3 de Chrome (pestañas y peticiones API Fish Audio)
+│   │   └── storage.js      <- Gestor de configuración en localStorage y limpieza de almacenamiento antiguo
+│   │
+│   └── styles/
+│       └── main.css        <- Estilos CSS globales (Tema oscuro moderno, Glassmorphism, Responsive)
+│
+└── images/                  <- Iconos de la extensión y portadas por defecto
+    ├── icon16.png
+    ├── icon48.png
+    ├── icon128.png
+    └── v_*.png              <- Imagenes comprimidas de muestra para voces
+
+===============================================================================
+[ARQUITECTURA Y FLUJO DE DATOS]
+===============================================================================
+
+1. ALMACENAMIENTO PERMANENTE (voices.json + server.py):
+   - El almacenamiento de datos (voces y carpetas) NO utiliza `localStorage` ni `chrome.storage.local` para el contenido masivo, para evitar límites de almacenamiento y pérdida de datos.
+   - Toda la información de voces y carpetas reside de forma nativa en el archivo `voices.json` ubicado en la raíz del proyecto.
+   - `server.py` se ejecuta en `http://localhost:8080`.
+   - Cuando el usuario crea, edita, mueve o elimina una voz o carpeta en la interfaz, `app.js` realiza una petición HTTP POST a `http://localhost:8080/api/save` con el objeto completo actual. `server.py` sobrescribe `voices.json` de manera atómica y segura en disco duro.
+
+2. LECTURA DE DATOS AL INICIAR:
+   - Al cargar la app (`app.js` -> `loadData()`), se intenta leer primeramente `http://localhost:8080/voices.json` (usando cache-busting `?t=timestamp`).
+   - Si el servidor local no está disponible, realiza un fallback para leer el archivo `voices.json` empaquetado mediante `chrome.runtime.getURL('voices.json')` o ruta relativa.
+
+3. INTEGRACIÓN CON CHROME EXTENSION (background.js):
+   - Permite abrir la app en una pestaña completa independiente (`open_tab`).
+   - Resuelve llamadas hacia `https://api.fish.audio/model/:modelId` librando posibles restricciones de CORS en background.
+
+===============================================================================
+[DETALLE DE COMPONENTES DE CÓDIGO]
+===============================================================================
+
+--- 1. manifest.json ---
+- Manifest Version: 3.
+- Permissions: `storage`.
+- Host Permissions: `https://api.fish.audio/*`, `https://*.r2.cloudflarestorage.com/*`, `http://localhost:8080/*`.
+- Action: Define `index.html` como `default_popup`.
+- Background Service Worker: `src/js/background.js`.
+
+--- 2. server.py ---
+- Servidor Python basado en `http.server.SimpleHTTPRequestHandler` y `socketserver.TCPServer`.
+- Puerto: 8080.
+- Rutas gestionadas:
+  * GET: Sirve archivos estáticos (`voices.json`, etc.) agregando encabezados CORS (`Access-Control-Allow-Origin: *`).
+  * POST `/api/save`: Recibe el JSON completo `{ "folders": [...], "voices": [...] }` y lo guarda en `voices.json` codificado en UTF-8 (ensure_ascii=False, indent=2).
+  * OPTIONS: Soporte pre-flight para CORS.
+- Configuración anti-bytecode: `sys.dont_write_bytecode = True`.
+
+--- 3. src/js/app.js ---
+Es la clase principal `App` que controla el estado de la aplicación.
+- Estado Principal:
+  * `this.voices`: Array de objetos de voz.
+  * `this.folders`: Array de objetos de carpetas.
+  * `this.activeFolderId`: ID de la carpeta seleccionada ('all', 'f_favorites', 'f_sueltas', o ID personalizado `f_...`).
+  * `this.selectedVoiceIds`: Set con IDs seleccionados en modo Selección Múltiple.
+  * `this.editingVoiceId`: ID de la voz en edición (null si es creación nueva).
+  * `this.currentCroppedImage`: Base64 / DataURL de la portada recortada.
+- Funcionalidades clave:
+  * `loadData()`: Carga `voices.json` desde el servidor local o local fallback.
+  * `saveData()`: Envía la estructura de carpetas y voces a `http://localhost:8080/api/save`.
+  * Carpetas Fijas por Defecto:
+    - `all`: "Todas"
+    - `f_favorites`: "Favoritas"
+    - `f_sueltas`: "Voces Sueltas"
+  * `render()` y `renderVoices()`: Filtra por búsqueda en tiempo real, ordena (reciente/antiguo), filtra por carpeta activa y genera tarjetas HTML.
+  * Reproductor de Audio: Maneja reproducción dinámica con elemento `<audio>`, slider de progreso, tiempo actual/duración y toggle play/pause por tarjeta.
+  * Recorte de Imágenes: Usa `<canvas>` para recortar imágenes subidas o pegadas (Ctrl+V) a formato cuadrado 1:1 de 140x140 px.
+  * Vista de Árbol / Mapa de Organizador (`renderFolderTree`): Modal con vista en árbol jerárquico expandible/colapsable y buscador para explorar voces dentro de cada carpeta.
+  * Selección Múltiple y Operaciones en Lote (`batchActionBar`): Mover múltiples voces a una carpeta o eliminarlas simultáneamente.
+
+--- 4. src/js/storage.js ---
+- `StorageManager`:
+  * `getSettings()` / `saveSettings()`: Administra preferencias globales de UI (`showQuickFolderBadge`, `showSidebarFolders`, `showVoiceNotes`) en `localStorage` bajo la clave `fish_audio_settings`.
+  * `clearLegacyStorage()`: Borra explícitamente `fish_audio_voices` y `fish_audio_folders` de `localStorage` para garantizar la sincronización exclusiva con `voices.json`.
+
+--- 5. src/js/background.js ---
+- Escuchador de eventos `chrome.runtime.onMessage`:
+  * Accion `open_tab`: Abre `index.html` en nueva pestaña completa del navegador.
+  * Accion `resolve_fish_audio`: Realiza peticiones `fetch` a la API de Fish Audio (`https://api.fish.audio/model/${modelId}`).
+
+--- 6. index.html ---
+- Layout responsivo con Header (título, botones de árbol, configuración, abrir en pestaña, agregar voz).
+- Sidebar izquierda para navegación entre carpetas (`#sidebarFolders`).
+- Zona central: Barra de filtrado/búsqueda, botón de ordenamiento, pestañas de carpetas deslizables (`#folderTabsWrapper`), acciones de carpeta activa.
+- Lista de tarjetas de voces (`#voicesList`).
+- Modales integrados:
+  * Modal Agregar/Editar Voz (con uploader de imagen en canvas, título, URL de Fish Audio, carpeta, notas).
+  * Modal Crear/Editar Carpeta.
+  * Modal Mapa de Carpetas / Árbol Organizador.
+  * Modal Configuración de Opciones.
+  * Modal Confirmar Acción (para eliminación de voces/carpetas).
+  * Barra Flotante de Acciones en Lote (Multi-selección).
+
+--- 7. src/styles/main.css ---
+- Sistema visual con variables CSS (`:root`): colores oscuros (`#0f172a`, `#1e293b`), acentos celestes/azules (`#38bdf8`, `#2563eb`), textos en escala de grises.
+- Estilos responsivos para modo Popup de Extensión y modo Pantalla Completa Web.
+
+===============================================================================
+[ESQUEMA DE DATOS EN voices.json]
+===============================================================================
+
+Estructura raíz:
+{
+  "folders": [
+    {
+      "id": "all",
+      "name": "Todas"
+    },
+    {
+      "id": "f_favorites",
+      "name": "Favoritas"
+    },
+    {
+      "id": "f_sueltas",
+      "name": "Voces Sueltas"
+    },
+    {
+      "id": "f_1700000000000",
+      "name": "Nombre Carpeta Personalizada"
+    }
+  ],
+  "voices": [
+    {
+      "id": "v_1700000000000",
+      "title": "Nombre de la Voz",
+      "url": "https://fish.audio/es/m/...",
+      "folderId": "f_sueltas",
+      "notes": "Observaciones, guiones o notas técnicas...",
+      "isFavorite": false,
+      "createdAt": 1700000000000,
+      "audioUrl": "https://...",      (URL de la muestra de audio extraída o provista)
+      "coverImage": "data:image/webp;base64,..." (o data:image/png;base64,...)
+    }
+  ]
+}
+
+===============================================================================
+[AUTOMATIZACIÓN EN WINDOWS]
+===============================================================================
+
+1. `Iniciar_Servidor.bat`: Ejecuta `python -B server.py`. El flag `-B` evita la creación de carpetas `__pycache__` y archivos `.pyc`.
+2. `Activar_AutoInicio.bat`: Ejecuta `cscript //nologo setup_startup.vbs`.
+3. `setup_startup.vbs`: Crea un acceso directo `FishAudioSync.lnk` en la carpeta de Inicio de Windows (`shell:startup`) apuntando a `Iniciar_Servidor.bat`. Permite que el servidor Python se inicie automáticamente en segundo plano en modo minimizado (`WindowStyle = 7`) al encender el sistema.
+
+===============================================================================
+[GUÍA RÁPIDA PARA LA IA Y DESARROLLADORES]
+===============================================================================
+
+1. SI SE MODIFICA LA LÓGICA DE ALMACENAMIENTO:
+   - Mantener la sincronización con `voices.json` a través de `http://localhost:8080/api/save`.
+   - NO reintroducir el guardado de voces en `localStorage` (evita desincronizaciones y limitaciones de tamaño).
+
+2. SI SE AGREGAN NUEVAS CARACTERÍSTICAS A LA UI:
+   - Actualizar `index.html` y vincular los elementos DOM en `App.bindDOM()` dentro de `src/js/app.js`.
+   - Asegurar compatibilidad visual tanto en el popup pequeño de Chrome Extension como en la pestaña desplegada a pantalla completa.
+
+3. SI SE CAMBIA EL ESQUEMA DE DATOS DE VOCES O CARPETAS:
+   - Asegurar que `loadData()` en `app.js` valide y asigne valores por defecto a campos nuevos para retrocompatibilidad con versiones anteriores de `voices.json`.
+
+===============================================================================

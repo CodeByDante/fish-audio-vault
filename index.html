@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <div class="app-container">
     <!-- Header -->
@@ -23,7 +25,8 @@
 
         <!-- Organizer / Folder Map Button -->
         <button class="btn open-tab-btn" id="treeViewBtn" title="Mapa de Carpetas (Organizador)">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
             <path d="M8 11h8"></path>
             <path d="M8 15h5"></path>
@@ -32,19 +35,31 @@
 
         <!-- Tool / Settings Config Button -->
         <button class="btn open-tab-btn" id="settingsBtn" title="Configuración de Opciones">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+            </path>
           </svg>
         </button>
 
         <!-- Open in Full Tab Button -->
         <button class="btn open-tab-btn" id="openTabBtn" title="Abrir en pestaña completa">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
         </button>
 
         <!-- Add Voice Modal Button -->
         <button class="btn add-modal-btn" id="openModalBtn" title="Agregar Nueva Voz">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21"></line><line x1="3" y1="12" x2="21" y2="12"></line></svg>
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="3" x2="12" y2="21"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+          </svg>
         </button>
       </div>
     </header>
@@ -57,7 +72,10 @@
           <div class="sidebar-header">
             <span class="sidebar-title">Carpetas</span>
             <button class="sidebar-add-btn" id="sidebarOpenFolderModalBtn" title="Crear nueva carpeta">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
               Nueva
             </button>
           </div>
@@ -72,8 +90,16 @@
           <div class="filter-bar">
             <input type="text" id="searchInput" class="search-input" placeholder="Buscar por título de voz...">
             <button class="btn sort-btn" id="sortOrderBtn" title="Orden: Más reciente a más antiguo">
-              <svg id="sortIconDesc" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
-              <svg id="sortIconAsc" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+              <svg id="sortIconDesc" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+              </svg>
+              <svg id="sortIconAsc" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                <line x1="12" y1="19" x2="12" y2="5"></line>
+                <polyline points="5 12 12 5 19 12"></polyline>
+              </svg>
             </button>
             <span class="total-count" id="totalCount">0 voces</span>
           </div>
@@ -81,13 +107,18 @@
 
           <!-- Folders Bar -->
           <div class="folder-section">
-            <button class="folder-scroll-btn left" id="scrollFoldersLeft" title="Desplazar a la izquierda">&lsaquo;</button>
+            <button class="folder-scroll-btn left" id="scrollFoldersLeft"
+              title="Desplazar a la izquierda">&lsaquo;</button>
             <div class="folder-tabs-wrapper" id="folderTabsWrapper">
               <!-- Folder chips will be dynamically rendered here -->
             </div>
-            <button class="folder-scroll-btn right" id="scrollFoldersRight" title="Desplazar a la derecha">&rsaquo;</button>
+            <button class="folder-scroll-btn right" id="scrollFoldersRight"
+              title="Desplazar a la derecha">&rsaquo;</button>
             <button class="add-folder-chip" id="openFolderModalBtn" title="Crear nueva carpeta">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
               Nueva Carpeta
             </button>
           </div>
@@ -96,8 +127,10 @@
           <div class="folder-header-actions" id="folderHeaderActions" style="display: none;">
             <span class="active-folder-title" id="activeFolderNameEl">Voces Bíblicas</span>
             <div class="folder-btn-group">
-              <button class="btn btn-secondary btn-sm" id="editFolderBtn" title="Renombrar esta carpeta">Renombrar</button>
-              <button class="btn btn-secondary btn-sm danger" id="deleteFolderBtn" title="Eliminar esta carpeta">Eliminar Carpeta</button>
+              <button class="btn btn-secondary btn-sm" id="editFolderBtn"
+                title="Renombrar esta carpeta">Renombrar</button>
+              <button class="btn btn-secondary btn-sm danger" id="deleteFolderBtn"
+                title="Eliminar esta carpeta">Eliminar Carpeta</button>
             </div>
           </div>
 
@@ -124,7 +157,11 @@
       <div class="modal-header">
         <h3 id="modalTitle">Agregar Nueva Voz</h3>
         <button class="modal-close-btn" id="closeModalBtn" title="Cerrar">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
         </button>
       </div>
       <form id="modalAddForm" class="modal-form">
@@ -136,14 +173,19 @@
               <div class="crop-preview-wrapper" id="cropWrapper">
                 <canvas id="cropCanvas" width="140" height="140" style="display: none;"></canvas>
                 <div class="image-placeholder" id="imagePlaceholder">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <polyline points="21 15 16 10 5 21"></polyline>
+                  </svg>
                   <span>Sube o pega<br><strong>Ctrl + V</strong></span>
                 </div>
               </div>
               <div class="image-actions">
                 <label for="modalFileInput" class="btn btn-secondary btn-sm">Subir Imagen</label>
                 <input type="file" id="modalFileInput" accept="image/*" style="display: none;">
-                <button type="button" class="btn btn-secondary btn-sm danger" id="removeImgBtn" style="display: none;">Quitar</button>
+                <button type="button" class="btn btn-secondary btn-sm danger" id="removeImgBtn"
+                  style="display: none;">Quitar</button>
               </div>
             </div>
           </div>
@@ -157,7 +199,8 @@
 
             <div class="form-group">
               <label for="modalUrlInput">Enlace / URL de Fish Audio</label>
-              <input type="url" id="modalUrlInput" class="form-control" placeholder="https://fish.audio/es/m/..." required>
+              <input type="url" id="modalUrlInput" class="form-control" placeholder="https://fish.audio/es/m/..."
+                required>
             </div>
 
             <div class="form-group">
@@ -167,7 +210,8 @@
 
             <div class="form-group">
               <label for="modalNotesInput">Notas / Observaciones</label>
-              <textarea id="modalNotesInput" class="form-control textarea-control" rows="3" placeholder="Escribe notas, observaciones, guiones o indicaciones de la voz..."></textarea>
+              <textarea id="modalNotesInput" class="form-control textarea-control" rows="3"
+                placeholder="Escribe notas, observaciones, guiones o indicaciones de la voz..."></textarea>
             </div>
           </div>
         </div>
@@ -186,7 +230,11 @@
       <div class="modal-header">
         <h3>Crear Nueva Carpeta</h3>
         <button class="modal-close-btn" id="closeFolderModalBtn" title="Cerrar">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
         </button>
       </div>
       <form id="createFolderForm" class="modal-form">
@@ -208,7 +256,11 @@
       <div class="modal-header">
         <h3>Renombrar Carpeta</h3>
         <button class="modal-close-btn" id="closeEditFolderModalBtn" title="Cerrar">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
         </button>
       </div>
       <form id="editFolderForm" class="modal-form">
@@ -230,12 +282,17 @@
       <div class="modal-header">
         <h3>Mapa de Carpetas y Voces</h3>
         <button class="modal-close-btn" id="closeTreeViewModalBtn" title="Cerrar">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
         </button>
       </div>
       <div class="tree-modal-body">
         <div class="tree-controls">
-          <input type="text" id="treeSearchInput" class="search-input" placeholder="Buscar voces o carpetas en el mapa...">
+          <input type="text" id="treeSearchInput" class="search-input"
+            placeholder="Buscar voces o carpetas en el mapa...">
           <div class="tree-btn-group">
             <button type="button" class="btn btn-secondary btn-sm" id="expandAllTreeBtn">Expandir Todo</button>
             <button type="button" class="btn btn-secondary btn-sm" id="collapseAllTreeBtn">Colapsar Todo</button>
@@ -254,7 +311,11 @@
       <div class="modal-header">
         <h3 id="confirmModalTitle">Confirmar Acción</h3>
         <button class="modal-close-btn" id="closeConfirmModalBtn" title="Cerrar">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
         </button>
       </div>
       <div class="modal-body-confirm">
@@ -272,13 +333,20 @@
     <div class="modal-content settings-modal-card">
       <div class="modal-header">
         <div class="modal-title-group">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+            </path>
           </svg>
           <h3>Configuración de Opciones</h3>
         </div>
         <button class="modal-close-btn" id="closeSettingsModalBtn" title="Cerrar">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
         </button>
       </div>
 
@@ -287,7 +355,8 @@
         <div class="setting-row">
           <div class="setting-text">
             <span class="setting-title-text">Selector Rápido de Carpeta en Tarjetas</span>
-            <p class="setting-desc-text">Muestra un menú desplegable en cada tarjeta de voz para cambiar de carpeta rápidamente.</p>
+            <p class="setting-desc-text">Muestra un menú desplegable en cada tarjeta de voz para cambiar de carpeta
+              rápidamente.</p>
           </div>
           <label class="toggle-switch">
             <input type="checkbox" id="toggleQuickFolderBadge">
@@ -311,7 +380,8 @@
         <div class="setting-row">
           <div class="setting-text">
             <span class="setting-title-text">Selector Múltiple de Voces</span>
-            <p class="setting-desc-text">Permite seleccionar varias voces al mismo tiempo para moverlas juntas a una carpeta.</p>
+            <p class="setting-desc-text">Permite seleccionar varias voces al mismo tiempo para moverlas juntas a una
+              carpeta.</p>
           </div>
           <label class="toggle-switch">
             <input type="checkbox" id="toggleMultiSelectMode">
@@ -323,7 +393,8 @@
         <div class="setting-row">
           <div class="setting-text">
             <span class="setting-title-text">Mostrar Notas en Tarjetas</span>
-            <p class="setting-desc-text">Muestra u oculta el recuadro de notas y observaciones en las tarjetas de voz.</p>
+            <p class="setting-desc-text">Muestra u oculta el recuadro de notas y observaciones en las tarjetas de voz.
+            </p>
           </div>
           <label class="toggle-switch">
             <input type="checkbox" id="toggleShowVoiceNotes" checked>
@@ -358,6 +429,8 @@
     </div>
   </div>
 
-  <script type="module" src="src/js/app.js"></script>
+  <script type="module" src="src/js/app.js?v=1.1.2"></script>
+
 </body>
+
 </html>

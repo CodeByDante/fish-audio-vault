@@ -158,36 +158,33 @@ class App {
     let localFolders = null;
     let localVoices = null;
 
-    try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 1500);
-      const serverRes = await fetch(`http://localhost:8080/voices.json?t=${Date.now()}`, { signal: controller.signal });
-      clearTimeout(timeoutId);
-      if (serverRes.ok) {
-        const json = await serverRes.json();
-        if (json.voices && Array.isArray(json.voices)) {
-          localVoices = json.voices;
-          localFolders = json.folders || null;
-        }
-      }
-    } catch (e) { }
+    const urlsToTry = [
+      `voices.json?t=${Date.now()}`,
+      `http://127.0.0.1:8080/voices.json?t=${Date.now()}`,
+      `http://localhost:8080/voices.json?t=${Date.now()}`
+    ];
 
-    if (!localVoices) {
+    if (window.chrome && chrome.runtime && chrome.runtime.getURL) {
       try {
-        const jsonPath = (window.chrome && chrome.runtime && chrome.runtime.getURL)
-          ? chrome.runtime.getURL('voices.json')
-          : 'voices.json';
-        const res = await fetch(`${jsonPath}?t=${Date.now()}`);
+        urlsToTry.push(chrome.runtime.getURL('voices.json'));
+      } catch (e) { }
+    }
+
+    for (const url of urlsToTry) {
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 3000);
+        const res = await fetch(url, { signal: controller.signal });
+        clearTimeout(timeoutId);
         if (res.ok) {
           const json = await res.json();
-          if (json.voices && Array.isArray(json.voices)) {
+          if (json && json.voices && Array.isArray(json.voices) && json.voices.length > 0) {
             localVoices = json.voices;
             localFolders = json.folders || null;
+            break;
           }
         }
-      } catch (e) {
-        console.warn('Carga de voices.json:', e);
-      }
+      } catch (e) { }
     }
 
     let savedFolders = localFolders || JSON.parse(JSON.stringify(DEFAULT_FOLDERS));
@@ -202,6 +199,7 @@ class App {
     this.folders = this.ensureFixedFoldersOrder(savedFolders);
     this.voices = savedVoices;
   }
+
 
   ensureFixedFoldersOrder(folders) {
     if (!Array.isArray(folders)) return JSON.parse(JSON.stringify(DEFAULT_FOLDERS));
@@ -220,38 +218,46 @@ class App {
   }
 
   async syncCloudDataInBackground() {
-    try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 2000);
-      const liveRes = await fetch(`http://localhost:8080/voices.json?t=${Date.now()}`, { signal: controller.signal });
-      clearTimeout(timeoutId);
-      if (liveRes.ok) {
-        const liveJson = await liveRes.json();
-        if (liveJson.voices && Array.isArray(liveJson.voices) && liveJson.voices.length > 0) {
-          const cloudVoices = liveJson.voices;
-          const cloudFolders = liveJson.folders || [];
+    const urlsToTry = [
+      `voices.json?t=${Date.now()}`,
+      `http://127.0.0.1:8080/voices.json?t=${Date.now()}`,
+      `http://localhost:8080/voices.json?t=${Date.now()}`
+    ];
 
-          cloudVoices.forEach(v => {
-            if (!v.coverImage || v.coverImage.trim() === '' || v.coverImage.startsWith('images/v_') || v.coverImage.includes('icon128.png')) {
-              v.coverImage = '';
+    for (const url of urlsToTry) {
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 2000);
+        const liveRes = await fetch(url, { signal: controller.signal });
+        clearTimeout(timeoutId);
+        if (liveRes.ok) {
+          const liveJson = await liveRes.json();
+          if (liveJson.voices && Array.isArray(liveJson.voices) && liveJson.voices.length > 0) {
+            const cloudVoices = liveJson.voices;
+            const cloudFolders = liveJson.folders || [];
+
+            cloudVoices.forEach(v => {
+              if (!v.coverImage || v.coverImage.trim() === '' || v.coverImage.startsWith('images/v_') || v.coverImage.includes('icon128.png')) {
+                v.coverImage = '';
+              }
+            });
+
+            this.voices = cloudVoices;
+            if (cloudFolders.length > 0) {
+              this.folders = this.ensureFixedFoldersOrder(cloudFolders);
             }
-          });
 
-          this.voices = cloudVoices;
-          if (cloudFolders.length > 0) {
-            this.folders = this.ensureFixedFoldersOrder(cloudFolders);
+            StorageManager.saveFolders(this.folders);
+            StorageManager.saveVoices(this.voices);
+            this.renderFolders();
+            this.render();
+            break;
           }
-
-          StorageManager.saveFolders(this.folders);
-          StorageManager.saveVoices(this.voices);
-          this.renderFolders();
-          this.render();
         }
-      }
-    } catch (e) {
-      console.log('Sincronización en segundo plano (servidor local opcional).');
+      } catch (e) { }
     }
   }
+
 
   async checkServerStatus() {
     const pill = document.getElementById('syncStatusPill');
@@ -2138,6 +2144,11 @@ class App {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    window.app = new App();
+  });
+} else {
   window.app = new App();
-});
+}
+

@@ -55,21 +55,19 @@
   ],
   "voices": [
     {
-      "id": "v_1789076335393",
-      "title": "gesse",
+      "id": "v_1789412439932",
+      "title": "geseeee",
       "url": "https://fish.audio/m/7fcc17f4ec8c4deca625aa6fbf2559e0",
-      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-09-10/465c518dcf5a422ea6030fe5feb4d366.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260914%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260914T025651Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5f2a9ca3000ade50de1569365e6721bc89552882593a52156b3f7c18d8a7605a",
+      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-09-10/465c518dcf5a422ea6030fe5feb4d366.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260914%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260914T190040Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c548ab398ba7b7054abd58252e8326890e51f65a7c3e8e72b6933f1fb1993f7f",
       "coverImage": "",
       "folderId": "f_1787441902065",
-      "notes": "",
-      "folderName": "mushoku tensei reincarnation",
-      "isFavorite": false
+      "notes": ""
     },
     {
       "id": "v_1788728771502",
       "title": "Voz Alegre Joven",
       "url": "https://fish.audio/m/5b5ed10a426f4634a761e1a2674682bf",
-      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-09-06/aa92e8478f3e414494291ff9173626ce.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260913%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260913T005654Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e677ecaaf4415e5e2cbbfff2a406362602a2eb92d66587183724817f600e2b97",
+      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-09-06/aa92e8478f3e414494291ff9173626ce.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260914%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260914T184931Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8795966b6a14c55546cc121bdecbaa33fcafdbedc44cebd5e191f1847d48108a",
       "coverImage": "",
       "folderId": "f_sueltas",
       "notes": "",
@@ -79,7 +77,7 @@
       "id": "v_1788569346737",
       "title": "Voz Firme Veterana",
       "url": "https://fish.audio/m/fc1c6a382b0c45aabfef8ea33c6869ef",
-      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-09-05/518f2b101ed14839b284769940d2e5d1.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260913%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260913T005656Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=24b51620fee6c892365d3ae25690bf5b2347b163709b34e9095238c13a908a99",
+      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-09-05/518f2b101ed14839b284769940d2e5d1.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260914%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260914T184932Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9b3b17a270c415a373ad6790cf52b8c831bf08df129d32e8a25c760d11cc3f94",
       "coverImage": "",
       "folderId": "f_sueltas",
       "folderName": "Voces Sueltas"
@@ -97,7 +95,7 @@
       "id": "v_1788568125863",
       "title": "Voz Tranquila Española",
       "url": "https://fish.audio/m/8a2a3acf359f47a9bf73348916a80323",
-      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-09-05/f5b0ad909db644db9f9e197377c93801.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260913%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260913T005935Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=cb8f43e3a9ea3deb2234e7c9763194d3c5b56842bc01d357e34c5022c122623d",
+      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-09-05/f5b0ad909db644db9f9e197377c93801.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260914%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260914T184945Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=52c8bbcb48b781d73348f8fbf08757b73149531612d0cc89ac25b338aa486235",
       "coverImage": "",
       "folderId": "f_sueltas",
       "folderName": "Voces Sueltas"
@@ -106,7 +104,7 @@
       "id": "v_1788567375892",
       "title": "Voz Masculina Fuerte",
       "url": "https://fish.audio/m/7c8aeb74f4744c92aa5d480fef0af3f6",
-      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-09-05/c0d6651e21d84d188e79791b67ca9756.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260913%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260913T010037Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5a17e39f78a196c5eca3bc642a251348f974b63c23e61320d4157ed2b471f408",
+      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/tasks/2026-09-05/c0d6651e21d84d188e79791b67ca9756.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260914%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260914T184949Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=48cb49d5a89c7f424f761cf3de8f83240f457a670210bacc3e16d0c9b58007fd",
       "coverImage": "",
       "folderId": "f_sueltas",
       "folderName": "Voces Sueltas"
@@ -684,7 +682,7 @@
       "sampleAudio": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/task/d3d3cde8b8ef4847b0519c89511b2ecf.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260823%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260823T011644Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d166f56fb5ed153ad9b0026ed93bf245b0a8212e99e3a0e2ec5cd91fc4ca147a",
       "coverImage": "",
       "createdAt": 1787446161615,
-      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/task/d3d3cde8b8ef4847b0519c89511b2ecf.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260901%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260901T140644Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=548a36c1f60757cc103bdb0de63dd63f819c5b0d0d14b88864b3d1477781e28c",
+      "audioUrl": "https://c97f3361a1c971323738e24f451a0225.r2.cloudflarestorage.com/fish-platform-data/task/d3d3cde8b8ef4847b0519c89511b2ecf.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=45aaffe6f2c5f28b260e2165001da8ad%2F20260914%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260914T190130Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=edd44cd2be7bb297515a3c05bd91d97bf23b5ed76ddf3c392ab5bf4d0f15ce7d",
       "folderId": "f_1787441744421",
       "folderName": "Narradores Tiktok"
     },
